@@ -13,11 +13,7 @@ export class ClientesService{
     }
 
 
-    async obtenerDatosCliente(token: string):Promise<APIResponse>{
-       return await this.request.get(`${this.baseURL}/cliente/dashboard`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
+    async obtenerDatosCliente():Promise<APIResponse>{
+       return await this.request.get(`${this.baseURL}/cliente/dashboard`)
     }
 }
