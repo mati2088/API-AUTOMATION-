@@ -11,10 +11,10 @@ export class PrestamosService{
         this.baseURL="https://homebanking-demo.onrender.com"
     }
  
-    async altaPrestamo(cuentaDestino:string, cuotas:number, monto:number):Promise<APIResponse>{
+    async altaPrestamo(cuenta_destino:string, cuotas:number, monto:number):Promise<APIResponse>{
         return this.request.post(`${this.baseURL}/prestamos/`,{
             data:{
-                cuentaDestino,
+                cuenta_destino,
                 cuotas,
                 monto
             }
