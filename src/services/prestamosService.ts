@@ -8,7 +8,7 @@ export class PrestamosService{
 
     constructor(request:APIRequestContext){
         this.request=request
-        this.baseURL="https://homebanking-demo.onrender.com"
+        this.baseURL=process.env.BASE_URL!
     }
  
     async altaPrestamo(cuenta_destino:string, cuotas:number, monto:number):Promise<APIResponse>{
