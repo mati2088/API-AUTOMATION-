@@ -2,7 +2,7 @@ name: API Testing #nombre pipiline
 
 on:
 push:
-branches:[main]
+  branches:[main]
 
 jobs:
  test: #nombre del job
