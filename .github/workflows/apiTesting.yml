@@ -1,18 +1,17 @@
 name: API Testing #nombre pipiline
 
 on:
-push:
-  branches:[main]
+  push:
+    branches: [main]
 
 jobs:
- test: #nombre del job
- runs-on: ubuntu-latest #sistema operativo
-steps:
-    -uses: actions/checkout@v4 #checkout del repositorio
-    -uses: actions/setup-node@v4 #configuracion de node
-    with:
-    node-version: '20' #version de node
-
-    -run: npm ci #instalacion de dependencias
-    -run:npx playwright install --with-deps #instalacion de dependencias de playwright
-    -run:  npx playwright test #ejecucion de pruebas 
+  test: #nombre del job
+    runs-on: ubuntu-latest #sistema operativo
+    steps:
+      - uses: actions/checkout@v4 #checkout del repositorio
+      - uses: actions/setup-node@v4 #configuracion de node
+        with:
+          node-version: '20' #version de node
+      - run: npm ci #instalacion de dependencias
+      - run: npx playwright install --with-deps #instalacion de dependencias de playwright
+      - run: npx playwright test #ejecucion de pruebas
