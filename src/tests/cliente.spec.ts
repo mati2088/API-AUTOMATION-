@@ -21,7 +21,7 @@ test("validar personalInfo", async({request})=>{
     console.log(body)
     //validaciones
     expect(body.data.personalInfo.name).toBe("Juan Pérez");
-    expect(body.data.accounts[0].id).toBe("ACC-P2CFX")
+    expect(body.data.accounts[0].id).toBe("ACC-PIPILINE")
     //expect(body.data.cards[0].id).toBe("CARD001")
 
     expect(body.data.personalInfo.address).not.toBe(null)
