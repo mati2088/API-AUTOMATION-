@@ -1,8 +1,16 @@
-name: API Testing #nombre pipiline
+name: API Testing #nombre pipeline
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Run ID from TestOne'
+        required: false
+      tags:
+        description: 'Test tags to filter'
+        required: false
 
 jobs:
   test: #nombre del job
