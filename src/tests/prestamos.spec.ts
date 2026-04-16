@@ -129,7 +129,7 @@ test.describe('Validar DESISTIR de PRESTAMO', () => {
         expect(bodyDesistir.exito).toBe(true);
         expect(bodyDesistir.mensaje).toBe('Préstamo desistido exitosamente');
 
-        // 5. Validar que el préstamo tenga el status 'rejected'
+        // 5. Validar que el préstamo tenga el status 'retracted'
         const responsePrestamos = await prestamosService.obtenerPrestamos();
         expect(responsePrestamos.status()).toBe(200);
         const bodyPrestamosList = await responsePrestamos.json();
