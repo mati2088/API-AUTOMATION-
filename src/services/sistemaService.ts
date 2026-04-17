@@ -8,12 +8,15 @@ export class SistemasService{
     
     constructor(request:APIRequestContext){
         this.request=request;
-        this.baseURL=process.env.BASE_URL!
+        this.baseURL=process.env.BASE_URL || 'https://homebanking-demo.onrender.com';
 
     }
 
+    private get headers(): { [key: string]: string } {
+        return process.env.TEST_TOKEN ? { Authorization: `Bearer ${process.env.TEST_TOKEN}` } : {};
+    }
 
     async resetearValores():Promise<APIResponse>{
-       return await this.request.post(`${this.baseURL}/sistema/resetear`)
+       return await this.request.post(`${this.baseURL}/sistema/resetear`, { headers: this.headers })
     }
 }
