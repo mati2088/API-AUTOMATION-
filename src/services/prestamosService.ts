@@ -21,8 +21,14 @@ export class PrestamosService{
         })
     }
 
-    //desistir prestamos
-    //obtener prestamos
+ async desistirPrestamo(idPrestamo: string): Promise<APIResponse> {
+        return this.request.delete(`${this.baseURL}/prestamos/${idPrestamo}/desistir`);
+    }
+
+     async obtenerPrestamos(): Promise<APIResponse> {
+    return this.request.get(`${this.baseURL}/prestamos/`);
+  }
+}
+
 
     
-}
